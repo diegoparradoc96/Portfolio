@@ -1,0 +1,23 @@
+services:
+  dev-books:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4321:4321"
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - node_modules/
+        - action: sync
+          path: ./public
+          target: /app/public
+        - action: rebuild
+          path: ./package.json
+        - action: rebuild
+          path: ./astro.config.mjs
+        - action: rebuild
+          path: ./Dockerfile.dev
