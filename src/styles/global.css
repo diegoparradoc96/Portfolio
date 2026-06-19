@@ -1,1 +1,42 @@
-@import "tailwindcss";
+:root {
+    --primary: #3b82f6;
+    --secondary: #3b82f6;
+    --tertiary: #d16900;
+
+    --neutral: #121212;
+    --neutral-1: #1C1B1B;
+    --neutral-2: #313030;
+    --neutral-3: #474646;
+    --neutral-4: #5F5E5E;
+    --neutral-5: #787776;
+    --neutral-6: #929090;
+    --neutral-7: #ADABAA;
+    --neutral-8: #C8C6C5;
+    --neutral-9: #E5E2E1;
+    --neutral-10: #F3F0EF;
+}
+
+/* Font Faces */
+@font-face {
+    font-family: "Geist";
+    src: url("../assets/fonts/Geist-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Jetbrains Mono";
+    src: url("../assets/fonts/Jetbrains-Mono-VariableFont_wght.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
