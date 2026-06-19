@@ -1,0 +1,74 @@
+---
+
+---
+
+<!-- skills card -->
+<div class="skills-card" id="skills">
+    <div>
+        <h3 class="skills-title">
+            <span class="material-symbols-outlined"> terminal </span>
+            Core Stack
+        </h3>
+
+        <div class="skills-list">
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">React / Next.js</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">AWS</span>
+        </div>
+    </div>
+</div>
+
+<style>
+    .skills-card {
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 16px;
+        padding: 2.2rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+    }
+
+    .skills-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary-8);
+    }
+
+    .skills-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .icon {
+        color: #6366f1;
+        font-size: 1.4rem;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .skill-tag {
+        font-family: "Jetbrains Mono";
+        background-color: #2a2a2a;
+        color: #cfcfcf;
+        border: 1px solid #444;
+        border-radius: 15px;
+        padding: 12px 12px;
+        font-size: 1rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+</style>

@@ -1,0 +1,72 @@
+---
+
+---
+
+<div class="intro-card">
+    <h2 class="intro-title">System Architecture & UI Design</h2>
+
+    <p class="intro-description">
+        I specialize in architecting full-stack applications that prioritize
+        performance, scalability, and developer experience. My approach combines
+        rigorous backend engineering with obsessive attention to frontend
+        detail, ensuring seamless user experiences across all devices. I believe
+        in writing clean, self-documenting code and maintaining comprehensive
+        test coverage.
+    </p>
+
+    <div class="location">
+        <span class="material-symbols-outlined"> location_on </span>
+        Soacha, Colombia
+    </div>
+</div>
+
+<style>
+    /* about and location */
+    .about {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: 1.7fr 1fr;
+        gap: 16px;
+    }
+
+    .intro-card {
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 16px;
+        padding: 4rem;
+        transition: all 0.3s ease;
+    }
+
+    .intro-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary-8);
+    }
+
+    .intro-title {
+        margin: 0 0 12px;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    .intro-description {
+        margin: 0 0 20px;
+        color: #a1a1aa;
+        line-height: 1.7;
+        font-size: 1.3rem;
+    }
+
+    .location {
+        font-family: "Jetbrains Mono";
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary-8);
+        font-size: 0.95rem;
+        font-weight: 600;
+    }
+
+    .location-icon {
+        font-size: 20px;
+    }
+</style>
