@@ -1,0 +1,133 @@
+---
+
+---
+
+<section class="hero">
+    <div class="hero-glow"></div>
+
+    <h1 class="hero-title">
+        Full-Stack<br />
+        <span>Developer.</span>
+    </h1>
+
+    <p class="hero-description">
+        Building robust, scalable applications with modern technologies.
+        Bridging the gap between elegant UI and complex backend systems.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+            View Projects
+            <span class="icon">→</span>
+        </a>
+
+        <a href="#contact" class="btn btn-secondary"> Contact Me </a>
+    </div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        min-height: 900px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .hero-glow {
+        position: absolute;
+        width: 30rem;
+        height: 30rem;
+        background: rgba(151, 153, 212, 0.2);
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: -1;
+    }
+
+    .hero-title {
+        font-family: "Geist";
+        font-size: clamp(4rem, 10vw, 6rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        color: var(--neutral-9);
+        margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+        color: var(--primary-8);
+    }
+
+    .hero-description {
+        max-width: 50rem;
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: var(--primary-10);
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 16px 46px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 0.7px;
+        font-size: 1rem;
+        font-family:
+            Jetbrains Mono,
+            monospace;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: var(--primary-8);
+        color: var(--neutral-2);
+    }
+
+    .btn-primary:hover {
+        opacity: 0.9;
+    }
+
+    .btn-secondary {
+        border: 1px solid var(--neutral-7);
+        color: var(--neutral-9);
+    }
+
+    .btn-secondary:hover {
+        border-color: var(--primary-8);
+        color: var(--primary-8);
+        background: rgba(99, 102, 241, 0.05);
+    }
+
+    .icon {
+        font-size: 18px;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .hero-buttons {
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+</style>
