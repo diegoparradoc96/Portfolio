@@ -1,5 +1,16 @@
 :root {
     --primary: #3b82f6;
+    --primary-1: #001A42;
+    --primary-2: #002E6A;
+    --primary-3: #004395;
+    --primary-4: #005AC2;
+    --primary-5: #2573E6;
+    --primary-6: #4D8EFF;
+    --primary-7: #81AAFF;
+    --primary-8: #ADC6FF;
+    --primary-9: #D8E2FF;
+
+
     --secondary: #3b82f6;
     --tertiary: #d16900;
 
@@ -13,7 +24,6 @@
     --neutral-7: #ADABAA;
     --neutral-8: #C8C6C5;
     --neutral-9: #E5E2E1;
-    --neutral-10: #F3F0EF;
 }
 
 /* Font Faces */
@@ -35,7 +45,7 @@
 
 @font-face {
     font-family: "Jetbrains Mono";
-    src: url("../assets/fonts/Jetbrains-Mono-VariableFont_wght.ttf") format("truetype");
+    src: url("../assets/fonts/JetBrainsMono-VariableFont_wght.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
