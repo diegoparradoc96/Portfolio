@@ -1,0 +1,40 @@
+---
+
+---
+
+<section class="projects-section">
+    <h2 class="projects-title">Projects</h2>
+
+    <div class="projects-grid">
+        <!-- Tus tarjetas de proyectos aquí -->
+    </div>
+</section>
+
+<style>
+    .projects-section {
+        padding-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .projects-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 32px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #333;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Equivale a md:grid-cols-2 */
+    @media (min-width: 768px) {
+        .projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
