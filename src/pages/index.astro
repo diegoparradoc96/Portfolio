@@ -5,22 +5,25 @@ import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout>
 	<Header />
-	<body id="body">
+	<div id="cuerpo">
 		<Hero />
 
 		<div id="about_skills_container">
 			<About />
 			<Skills />
 		</div>
-	</body>
+
+		<Projects />
+	</div>
 </Layout>
 
 <style>
-	#body {
+	#cuerpo {
 		background: var(--neutral);
 		font-family: Arial, sans-serif;
 		width: 100%;
