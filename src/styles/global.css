@@ -25,6 +25,20 @@
     --neutral-7: #ADABAA;
     --neutral-8: #C8C6C5;
     --neutral-9: #E5E2E1;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-lg2: 3rem;
+    --spacing-xl: 4rem;
+
+    --font-size-xs: 0.5rem;
+    --font-size-sm: 1rem;
+    --font-size-md: 1.5rem;
+    --font-size-lg: 2rem;
+    --font-size-lg2: 3rem;
+    --font-size-xl: 4rem;
 }
 
 /* Font Faces */

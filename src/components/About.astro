@@ -23,7 +23,7 @@
 <style>
     /* about and location */
     .about {
-        margin-top: 60px;   
+        margin-top: 60px;
         display: grid;
         grid-template-columns: 1.7fr 1fr;
         gap: 16px;
@@ -31,29 +31,30 @@
 
     .intro-card {
         /* background-color: #1e1e1e; */
-        border: 1px solid #333;
+        border: 1px solid var(--neutral-2);
+        background-color: var(--neutral-1);
         border-radius: 16px;
         padding: 4rem;
         transition: all 0.3s ease;
-    }
-
-    .intro-card:hover {
-        transform: translateY(-4px);
-        border-color: var(--primary-8);
-    }
-
-    .intro-title {
-        margin: 0 0 12px;
-        font-size: 3rem;
-        font-weight: 700;
-        color: #ffffff;
     }
 
     .intro-description {
         margin: 0 0 20px;
         color: #a1a1aa;
         line-height: 1.7;
-        font-size: 1.3rem;
+        font-size: var(--font-size-md);
+    }
+
+    .intro-title {
+        margin: 0 0 12px;
+        font-size: var(--font-size-lg);
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    .intro-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary-8);
     }
 
     .location {
@@ -62,7 +63,7 @@
         align-items: center;
         gap: 8px;
         color: var(--primary-8);
-        font-size: 0.95rem;
+        font-size: var(--font-size-sm);
         font-weight: 600;
     }
 

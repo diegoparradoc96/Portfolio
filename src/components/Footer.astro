@@ -1,0 +1,96 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-copyright">
+            © {currentYear} DEV.SOLUTIONS. Built with precision.
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer Navigation">
+            <a class="footer-link" href="#">Privacy Policy</a>
+            <a class="footer-link" href="#">Terms of Service</a>
+            <a class="footer-link" href="#">Open Source</a>
+        </nav>
+    </div>
+</footer>
+
+<style>
+    /* Variables de diseño locales (pueden heredar de tus tokens globales) */
+    :root {
+        --max-width-container: 1200px; /* Ajusta a tu max-w-container-max */
+        --gutter-padding: 1.5rem;
+    }
+
+    /* Soporte nativo para modo oscuro (Estrategia por media query o clase .dark) */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --color-outline-variant: #374151;
+            --color-on-surface-variant: #9ca3af;
+            --color-bg-footer: #111827;
+        }
+    }
+
+    /* Si usas una clase mutadora en el <html> para modo oscuro, descomenta esto: */
+    /*
+  :global(.dark) {
+    --color-outline-variant: #374151;
+    --color-on-surface-variant: #9ca3af;
+    --color-bg-footer: #111827;
+  }
+  */
+
+    .site-footer {
+        width: 100%;
+        padding-top: var(--spacing-lg2);
+        padding-bottom: var(--spacing-lg2);
+        background-color: var(--neutral);
+        border-top: 1px solid var(--color-outline-variant);
+        box-shadow: none; /* flat no shadows */
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        max-width: var(--max-width-container);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: var(--gutter-padding);
+        padding-right: var(--gutter-padding);
+        gap: var(--spacing-md);
+    }
+
+    @media (min-width: 768px) {
+        .footer-container {
+            flex-direction: row;
+        }
+    }
+
+    .footer-copyright {
+        font-family: "Jetbrains Mono";
+        font-size: var(--font-size-sm);
+        color: var(--primary-10);
+    }
+
+    .footer-nav {
+        display: flex;
+        gap: var(--spacing-md);
+        font-size: var(--font-size-sm);
+        letter-spacing: 0.05em;
+    }
+
+    .footer-link {
+        font-family: "Jetbrains Mono";
+        color: var(--primary-10);
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+    }
+
+    .footer-link:hover {
+        color: var(--primary-8);
+    }
+</style>
