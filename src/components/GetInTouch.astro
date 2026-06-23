@@ -1,0 +1,196 @@
+---
+
+---
+
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+        <h2 class="contact-title">Get in Touch</h2>
+        <p class="contact-description">
+            Currently open for new opportunities. Whether you have a question or
+            just want to say hi, I'll try my best to get back to you!
+        </p>
+
+        <div class="contact-grid">
+            <a href="#" class="contact-card">
+                <div class="icon-wrapper">
+                    <span class="material-symbols-outlined">code</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-label">GitHub</div>
+                    <div class="card-value">@devsolutions</div>
+                </div>
+            </a>
+
+            <a href="#" class="contact-card">
+                <div class="icon-wrapper">
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-label">LinkedIn</div>
+                    <div class="card-value">Professional Profile</div>
+                </div>
+            </a>
+
+            <a href="#" class="contact-card">
+                <div class="icon-wrapper">
+                    <span class="material-symbols-outlined">share</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-label">Twitter / X</div>
+                    <div class="card-value">@dev_updates</div>
+                </div>
+            </a>
+
+            <a href="mailto:hello@example.com" class="contact-card">
+                <div class="icon-wrapper">
+                    <span class="material-symbols-outlined">mail</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-label">Email</div>
+                    <div class="card-value">hello@example.com</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="social-footer">
+            <a class="social-icon-btn" href="#">
+                <span class="material-symbols-outlined">code</span>
+            </a>
+            <a class="social-icon-btn" href="#">
+                <span class="material-symbols-outlined">mail</span>
+            </a>
+            <a class="social-icon-btn" href="#">
+                <span class="material-symbols-outlined">link</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Buenas prácticas Astro: Definimos un fallback local de las variables 
+    por si no las tienes declaradas de forma global. 
+  */
+
+    /* Sección Principal */
+    .contact-section {
+        padding-top: var(--spacing-sm);
+        padding-bottom: 15rem;
+    }
+
+    .contact-container {
+        max-width: 52rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    /* Tipografías */
+    .contact-title {
+        font-family: "Geist";
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--neutral-9);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .contact-description {
+        font-size: var(--font-size-md);
+        color: var(--neutral-8);
+        margin-bottom: var(--spacing-lg);
+        line-height: 1.6;
+    }
+
+    /* Grid Layout */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    @media (min-width: 640px) {
+        .contact-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    /* Tarjetas de Contacto */
+    .contact-card {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg2);
+        background-color: var(--neutral-1);
+        border: 1px solid var(--neutral-2);
+        border-radius: 0.5rem; /* rounded-xl */
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .contact-card:hover {
+        border-color: var(--primary-8);
+        background-color: rgba(var(--color-primary-rgb), 0.05); /* primary/5 */
+    }
+
+    /* Contenedor del Icono y Efecto de Escala (group-hover) */
+    .icon-wrapper {
+        width: 3rem; /* w-12 */
+        height: 3rem; /* h-12 */
+        border-radius: 9999px;
+        background-color: var(--neutral-3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-8);
+        transition: transform 0.1s ease-in-out;
+    }
+
+    .contact-card:hover .icon-wrapper {
+        transform: scale(1.1); /* group-hover:scale-110 */
+    }
+
+    /* Texto dentro de las Tarjetas */
+    .card-content {
+        text-align: left;
+    }
+
+    .card-label {
+        color: var(--primary-8);
+        font-size: var(--font-size-md);
+        font-family: "Jetbrains Mono";
+    }
+
+    .card-value {
+        color: var(--neutral-8);
+        font-family: "Inter";
+        font-size: var(--font-size-md);
+    }
+
+    /* Footer Social (Botones de abajo) */
+    .social-footer {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+
+    .social-icon-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--spacing-sm);
+        border: 1px solid var(--neutral-3);
+        border-radius: 10px;
+        background-color: var(--neutral-1);
+        color: var(--neutral-8);
+        text-decoration: none;
+        font-size: var(--font-size-md);
+        transition:
+            color 0.2s ease-in-out,
+            border-color 0.2s ease-in-out;
+    }
+
+    .social-icon-btn:hover {
+        color: var(--primary-8);
+        border-color: var(--primary-8);
+    }
+</style>

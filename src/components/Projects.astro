@@ -8,7 +8,7 @@ console.log("Projects:", projects);
 ---
 
 <section class="projects-section">
-    <h2 class="projects-title">Projects</h2>
+    <h2 class="projects-title">Personal Projects</h2>
 
     <div class="projects-grid">
         {
@@ -48,8 +48,7 @@ console.log("Projects:", projects);
     }
 
     .projects-title {
-        font-size: 3rem;
-        font-weight: 700;
+        font-size: var(--font-size-lg2);
         font-family: "Inter";
         color: var(--neutral-9);
         margin-bottom: 10px;
@@ -109,9 +108,7 @@ console.log("Projects:", projects);
         transform: scale(1.05);
     }
 
-    #tag {
-        font-family: "Jetbrains Mono";
-    }
+   
 
     #title-container {
         display: grid;
@@ -120,6 +117,7 @@ console.log("Projects:", projects);
 
     #title {
         font-family: "Geist";
+        font-size: var(--font-size-lg);
         margin-top: 0px;
         margin-bottom: 0px;
         transition: all 200ms ease-in-out;
@@ -140,15 +138,23 @@ console.log("Projects:", projects);
     }
 
     #description {
+        color: var(--neutral-8);
         font-family: "Inter";
-        margin-top: 7px;
-        margin-button: 7px;
+        font-size: var(--font-size-md);
+        margin-top: 10px;
+        
+    }
+
+     #tag {
+        color: var(--neutral-8);
+        font-family: "Jetbrains Mono";
+        font-size: var(--font-size-sm);
     }
     
     #floating-point {
         color: var(--neutral-5);
         font-weight: bold;
-        font-size: 20px;
+        font-size: var(--font-size-sm);
         margin-left: 10px;
         margin-right: 10px;        
     }
