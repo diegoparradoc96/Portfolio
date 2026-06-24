@@ -1,0 +1,27 @@
+{
+  "header.about": "Sobre mí",
+  "header.skills": "Habilidades",
+  "header.projects": "Proyectos",
+  "header.contact": "Contacto",
+
+  "hero.title": "Full-Stack",
+  "hero.titleSpan": "Developer.",
+  "hero.description": "Construyendo aplicaciones robustas y escalables con tecnologías modernas. Cerrando la brecha entre una UI elegante y sistemas backend complejos.",
+  "hero.viewProjects": "Ver Proyectos",
+  "hero.contact": "Contactarme",
+
+  "about.title": "Arquitectura de Sistemas y Diseño UI",
+  "about.description": "Me especializo en arquitectar aplicaciones full-stack que priorizan rendimiento, escalabilidad y experiencia del desarrollador. Mi enfoque combina ingeniería backend rigurosa con atención obsesiva a detalles frontend, garantizando experiencias de usuario perfectas en todos los dispositivos.",
+  "about.location": "Soacha, Colombia",
+
+  "projects.title": "Proyectos personales",
+
+  "contact.title": "Ponte en Contacto",
+  "contact.description": "Actualmente estoy abierto a nuevas oportunidades. Ya sea que tengas una pregunta o simplemente quieras saludar, ¡haré todo lo posible por responderte!",
+  "contact.linkedinValue": "Perfil Profesional",
+
+  "footer.copyright": "Hecho con precisión",
+  "footer.privacy": "Política de Privacidad",
+  "footer.terms": "Términos de Servicio",
+  "footer.openSource": "Código Abierto"
+}

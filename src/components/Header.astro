@@ -1,5 +1,11 @@
 ---
-import "../styles/global.css";
+import { t } from "../i18n/utils";
+
+interface Props {
+    lang: string;
+}
+
+const { lang } = Astro.props;
 ---
 
 <header id="header">
@@ -9,14 +15,38 @@ import "../styles/global.css";
 
     <div id="content">
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href={`/${lang}#about`}>{t(lang, "header.about")}</a></li>
+            <li><a href={`/${lang}#skills`}>{t(lang, "header.skills")}</a></li>
+            <li>
+                <a href={`/${lang}#projects`}>{t(lang, "header.projects")}</a>
+            </li>
+            <li>
+                <a href={`/${lang}#contact`}>{t(lang, "header.contact")}</a>
+            </li>
         </ul>
     </div>
 
-    <div class="theme-switch-wrapper">
+    <div class="controls-wrapper">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <a
+                href="/es/"
+                class={`lang-btn ${lang === "es" ? "active" : ""}`}
+                aria-label="Cambiar a Español"
+            >
+                ES
+            </a>
+            <span class="lang-separator">·</span>
+            <a
+                href="/en/"
+                class={`lang-btn ${lang === "en" ? "active" : ""}`}
+                aria-label="Switch to English"
+            >
+                EN
+            </a>
+        </div>
+
+        <!-- Theme Toggle -->
         <input type="checkbox" id="theme-toggle" class="theme-checkbox" />
         <label
             for="theme-toggle"
@@ -40,21 +70,14 @@ import "../styles/global.css";
         z-index: 1000;
         border-bottom: 1px solid var(--neutral-2);
 
-        /* --- CONFIGURACIÓN DEL GRID --- */
         display: grid;
-        /* Creamos 3 columnas iguales (1fr cada una) */
         grid-template-columns: repeat(3, 1fr);
-        /* Alinea todos los elementos verticalmente al centro */
         align-items: center;
-        /* Padding lateral para no pegar las cosas a los bordes de la pantalla */
         padding: 0 5%;
-        box-sizing: border-box; /* Asegura que el padding no rompa el width: 100% */
+        box-sizing: border-box;
     }
 
-    /* --- ELEMENTOS DEL GRID --- */
-
     #logo {
-        /* Ya no necesita width ni padding-left */
         display: flex;
         align-items: center;
     }
@@ -67,14 +90,7 @@ import "../styles/global.css";
         color: var(--neutral-9);
     }
 
-    /* Cambié la clase a tu contenedor del switch para alinearlo al centro */
-    .theme-switch-wrapper {
-        display: flex;
-        justify-content: flex-end; /* Centra el botón exactamente en la columna del medio */
-    }
-
     #content {
-        /* Ya no necesita width ni padding-right */
         display: flex;
         justify-content: center;
     }
@@ -97,10 +113,54 @@ import "../styles/global.css";
     }
 
     #content ul a:hover {
-        color: var(--neutral-7);
+        color: var(--primary-8);
     }
 
-    /* --- ESTILOS DEL SWITCH (SE MANTIENEN IGUAL) --- */
+    /* --- CONTROLS WRAPPER (Language + Theme) --- */
+    .controls-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* --- LANGUAGE SWITCHER --- */
+    .language-switcher {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: "Jetbrains Mono", monospace;
+        font-size: 0.9rem;
+    }
+
+    .lang-btn {
+        padding: 0.4rem 0.8rem;
+        text-decoration: none;
+        color: var(--neutral-7);
+        border: 1px solid transparent;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    .lang-btn:hover {
+        color: var(--neutral-9);
+        border-color: var(--primary-8);
+    }
+
+    .lang-btn.active {
+        color: var(--primary-8);
+        border-color: var(--primary-8);
+        background-color: rgba(173, 198, 255, 0.05);
+    }
+
+    .lang-separator {
+        color: var(--neutral-5);
+        font-weight: bold;
+    }
+
+    /* --- THEME TOGGLE --- */
     .theme-checkbox {
         opacity: 0;
         position: absolute;
@@ -115,11 +175,13 @@ import "../styles/global.css";
         position: relative;
         font-size: 1.5rem;
         user-select: none;
+        transition: all 0.2s ease;
     }
 
     .sun {
         display: block;
     }
+
     .moon {
         display: none;
     }
@@ -127,61 +189,33 @@ import "../styles/global.css";
     .theme-checkbox:checked + .theme-label .sun {
         display: none;
     }
+
     .theme-checkbox:checked + .theme-label .moon {
         display: block;
     }
 
-    /* #header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background-color: var(--neutral);
-        display: flex;
-        align-items: center;
-        z-index: 1000;
-        border-bottom: 1px solid var(--neutral-2);
-    }
-    #logo {
-        width: 33%;
-        padding-left: 5%;
-    }
-    #tools {
-    }
-    #logo p {
-        margin: 0;
-        font-size: var(--font-size-sm);
-        font-family: "Geist";
-        font-weight: bold;
-        color: var(--neutral-9);
-    }
-    #content {
-        width: 33%;
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 5%;
-    }
-    #content ul {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        list-style-type: none;
-    }
-    #content ul a {
-        text-decoration: none;
-        font-family: "Inter";
-        font-size: var(--font-size-sm);
-        color: var(--neutral-9);
-    }
-    #content ul a:hover {
-        color: var(--neutral-7);
-    }
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+        #header {
+            grid-template-columns: 1fr auto;
+            padding: 0 3%;
+        }
 
-    .theme-switch-wrapper {
-        width: 33%;
-        display: inline-block;
-    }
+        #content {
+            display: none;
+        }
 
-    /* Ocultamos el checkbox real, pero sigue siendo accesible */
+        .controls-wrapper {
+            gap: 1rem;
+        }
+
+        .language-switcher {
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            padding: 0.35rem 0.6rem;
+            font-size: 0.85rem;
+        }
+    }
 </style>

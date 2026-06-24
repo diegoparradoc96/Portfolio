@@ -1,18 +1,29 @@
 ---
+import { t } from "../i18n/utils";
 import { getCollection, type CollectionEntry } from "astro:content";
+
+/* props */
+interface Props {
+    lang: string;
+}
+
 /* types */
 type Project = CollectionEntry<"projects">;
 
+const { lang } = Astro.props;
+
 const projects = await getCollection("projects");
-console.log("Projects:", projects);
+const filteredProjects = projects.filter((p: Project) => p.data.lang === lang);
+console.log("projects", projects);
+console.log("filteredProjects", filteredProjects);
 ---
 
 <section class="projects-section">
-    <h2 class="projects-title">Personal Projects</h2>
+    <h2 class="projects-title">{t(lang, "projects.title")}</h2>
 
     <div class="projects-grid">
         {
-            projects.map((project: Project) => (
+            filteredProjects.map((project: Project) => (
                 <article class="card">
                     <div id="image-container">
                         <img

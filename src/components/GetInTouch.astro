@@ -1,13 +1,18 @@
 ---
+import { t } from "../i18n/utils";
 
+interface Props {
+    lang: string;
+}
+
+const { lang } = Astro.props;
 ---
 
 <section class="contact-section" id="contact">
     <div class="contact-container">
-        <h2 class="contact-title">Get in Touch</h2>
+        <h2 class="contact-title">{t(lang, "contact.title")}</h2>
         <p class="contact-description">
-            Currently open for new opportunities. Whether you have a question or
-            just want to say hi, I'll try my best to get back to you!
+            {t(lang, "contact.description")}
         </p>
 
         <div class="contact-grid">
