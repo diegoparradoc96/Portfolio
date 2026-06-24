@@ -1,11 +1,11 @@
 ---
-# src/content/proyectos/proyecto-1.md
 title: "Raid Manager for WOTLK"
 description: "A web application to manage your World of Warcraft: WOTLK raid team."
 pubDate: 2026-06-22
 tags: ["React", "Typescript", "Chackra UI", "Atlassian: Pagmatic drag and drop"]
-image: "../../src/assets/raidteam.webp"
+image: "../../../src/assets/raidteam.webp"
 link: "https://github.com/diegoparradoc96/RaidTeamWeb"
+lang: "en"
 ---
 
 ## Sobre este proyecto

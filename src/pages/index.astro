@@ -1,45 +1,19 @@
 ---
-import "../styles/global.css";
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Skills from "../components/Skills.astro";
-import Projects from "../components/Projects.astro";
-import GetInTouch from "../components/GetInTouch.astro";
-import Footer from "../components/Footer.astro";
+// src/pages/index.astro
+
+// 1. Detectar el idioma preferido del navegador del usuario
+const acceptLanguage = Astro.request.headers.get('accept-language') || '';
+const preferredLanguage = acceptLanguage.split(',')[0].substring(0, 2);
+
+// 2. Definir tu idioma por defecto si no es español ni inglés
+const defaultLanguage = 'en';
+const supportedLanguages = ['es', 'en'];
+
+const finalLanguage = supportedLanguages.includes(preferredLanguage) 
+  ? preferredLanguage 
+  : defaultLanguage;
+
+// 3. Redireccionar al usuario a /es/ o /en/
+return Astro.redirect(`/${finalLanguage}/`);
 ---
 
-<Layout>
-	<Header />
-	<div id="cuerpo">
-		<Hero />
-
-		<div id="about_skills_container">
-			<About />
-			<Skills />
-		</div>
-
-		<Projects />
-		<GetInTouch />
-	</div>
-	<Footer />
-</Layout>
-
-<style is:global>
-	#cuerpo {
-		background: var(--neutral);
-		font-family: Arial, sans-serif;
-		width: 100%;
-		padding-left: 5%;
-		padding-right: 5%;
-		box-sizing: border-box;
-	}
-
-	#about_skills_container {
-		margin-top: 60px;
-		display: grid;
-		grid-template-columns: 1.7fr 1fr;
-		gap: 16px;
-	}
-</style>

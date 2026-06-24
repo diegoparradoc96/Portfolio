@@ -1,0 +1,45 @@
+---
+import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Hero from "../../components/Hero.astro";
+import About from "../../components/About.astro";
+import Skills from "../../components/Skills.astro";
+import Projects from "../../components/Projects.astro";
+import GetInTouch from "../../components/GetInTouch.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout>
+	<Header lang="en" />
+	<div id="cuerpo">
+		<Hero lang="en" />
+
+		<div id="about_skills_container">
+			<About lang="en" />
+			<Skills />
+		</div>
+
+		<Projects lang="en" />
+		<GetInTouch lang="en" />
+	</div>
+	<Footer lang="en" />
+</Layout>
+
+<style is:global>
+	#cuerpo {
+		background: var(--neutral);
+		font-family: Arial, sans-serif;
+		width: 100%;
+		padding-left: 5%;
+		padding-right: 5%;
+		box-sizing: border-box;
+	}
+
+	#about_skills_container {
+		margin-top: 60px;
+		display: grid;
+		grid-template-columns: 1.7fr 1fr;
+		gap: 16px;
+	}
+</style>

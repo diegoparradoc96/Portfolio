@@ -1,0 +1,27 @@
+{
+  "header.about": "About",
+  "header.skills": "Skills",
+  "header.projects": "Projects",
+  "header.contact": "Contact",
+
+  "hero.title": "Full-Stack",
+  "hero.titleSpan": "Developer.",
+  "hero.description": "Building robust, scalable applications with modern technologies. Bridging the gap between elegant UI and complex backend systems.",
+  "hero.viewProjects": "View Projects",
+  "hero.contact": "Contact Me",
+
+  "about.title": "System Architecture & UI Design",
+  "about.description": "I specialize in architecting full-stack applications that prioritize performance, scalability, and developer experience. My approach combines rigorous backend engineering with obsessive attention to frontend detail, ensuring seamless user experiences across all devices.",
+  "about.location": "Soacha, Colombia",
+
+  "projects.title": "Personal Projects",
+
+  "contact.title": "Get in Touch",
+  "contact.description": "Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+  "contact.linkedinValue": "Professional Profile",
+
+  "footer.copyright": "Built with precision.",
+  "footer.privacy": "Privacy Policy",
+  "footer.terms": "Terms of Service",
+  "footer.openSource": "Open Source"
+}

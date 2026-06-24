@@ -1,25 +1,31 @@
 ---
 const currentYear = new Date().getFullYear();
+import { t } from "../i18n/utils";
+
+interface Props {
+    lang: string;
+}
+
+const { lang } = Astro.props;
 ---
 
 <footer class="site-footer">
     <div class="footer-container">
         <div class="footer-copyright">
-            © {currentYear} DEV.SOLUTIONS. Built with precision.
+            © {currentYear} DEV.SOLUTIONS. {t(lang, "footer.copyright")}.
         </div>
 
         <nav class="footer-nav" aria-label="Footer Navigation">
-            <a class="footer-link" href="#">Privacy Policy</a>
-            <a class="footer-link" href="#">Terms of Service</a>
-            <a class="footer-link" href="#">Open Source</a>
+            <a class="footer-link" href="#">{t(lang, "footer.privacy")}</a>
+            <a class="footer-link" href="#">{t(lang, "footer.terms")}</a>
+            <a class="footer-link" href="#">{t(lang, "openSource")}</a>
         </nav>
     </div>
 </footer>
 
 <style>
-    /* Variables de diseño locales (pueden heredar de tus tokens globales) */
     :root {
-        --max-width-container: 1200px; /* Ajusta a tu max-w-container-max */
+        --max-width-container: 1200px;
         --gutter-padding: 1.5rem;
     }
 
@@ -31,15 +37,6 @@ const currentYear = new Date().getFullYear();
             --color-bg-footer: #111827;
         }
     }
-
-    /* Si usas una clase mutadora en el <html> para modo oscuro, descomenta esto: */
-    /*
-  :global(.dark) {
-    --color-outline-variant: #374151;
-    --color-on-surface-variant: #9ca3af;
-    --color-bg-footer: #111827;
-  }
-  */
 
     .site-footer {
         width: 100%;

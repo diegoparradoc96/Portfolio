@@ -1,22 +1,23 @@
 ---
+import { t } from "../i18n/utils";
 
+interface Props {
+    lang: string;
+}
+
+const { lang } = Astro.props;
 ---
 
 <div class="intro-card">
-    <h2 class="intro-title">System Architecture & UI Design</h2>
+    <h2 class="intro-title">{t(lang, "about.title")}</h2>
 
     <p class="intro-description">
-        I specialize in architecting full-stack applications that prioritize
-        performance, scalability, and developer experience. My approach combines
-        rigorous backend engineering with obsessive attention to frontend
-        detail, ensuring seamless user experiences across all devices. I believe
-        in writing clean, self-documenting code and maintaining comprehensive
-        test coverage.
+        {t(lang, "about.description")}
     </p>
 
     <div class="location">
         <span class="material-symbols-outlined"> location_on </span>
-        Soacha, Colombia
+        {t(lang, "about.location")}
     </div>
 </div>
 
