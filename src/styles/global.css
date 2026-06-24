@@ -11,10 +11,6 @@
     --primary-9: #D8E2FF;
     --primary-10: #EDF0FF;
 
-
-    --secondary: #3b82f6;
-    --tertiary: #d16900;
-
     --neutral: #121212;
     --neutral-1: #1C1B1B;
     --neutral-2: #313030;
@@ -22,9 +18,9 @@
     --neutral-4: #5F5E5E;
     --neutral-5: #787776;
     --neutral-6: #929090;
-    --neutral-7: #ADABAA;
-    --neutral-8: #C8C6C5;
-    --neutral-9: #E5E2E1;
+    --neutral-7: #D1CFCE;
+    --neutral-8: #EAE8E7;
+    --neutral-9: #F5F4F3;
 
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -39,6 +35,33 @@
     --font-size-lg: 2rem;
     --font-size-lg2: 3rem;
     --font-size-xl: 4rem;
+}
+
+/* Light mode */
+header:has(#theme-toggle:checked),
+body:has(#theme-toggle:checked) {
+    --primary: #3b82f6;
+    --primary-1: #EDF0FF;
+    --primary-2: #D8E2FF;
+    --primary-3: #ADC6FF;
+    --primary-4: #81AAFF;
+    --primary-5: #4D8EFF;
+    --primary-6: #2573E6;
+    --primary-7: #005AC2;
+    --primary-8: #004395;
+    --primary-9: #002E6A;
+    --primary-10: #001A42;
+
+    --neutral: #F5F4F3;
+    --neutral-1: #EAE8E7;
+    --neutral-2: #D1CFCE;
+    --neutral-3: #929090;
+    --neutral-4: #787776;
+    --neutral-5: #5F5E5E;
+    --neutral-6: #474646;
+    --neutral-7: #313030;
+    --neutral-8: #1C1B1B;
+    --neutral-9: #121212;
 }
 
 /* Font Faces */
