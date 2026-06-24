@@ -15,6 +15,18 @@ import "../styles/global.css";
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
+
+    <div class="theme-switch-wrapper">
+        <input type="checkbox" id="theme-toggle" class="theme-checkbox" />
+        <label
+            for="theme-toggle"
+            class="theme-label"
+            aria-label="Cambiar modo de color"
+        >
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </label>
+    </div>
 </header>
 
 <style>
@@ -25,38 +37,151 @@ import "../styles/global.css";
         width: 100%;
         height: 60px;
         background-color: var(--neutral);
+        z-index: 1000;
+        border-bottom: 1px solid var(--neutral-2);
+
+        /* --- CONFIGURACIÓN DEL GRID --- */
+        display: grid;
+        /* Creamos 3 columnas iguales (1fr cada una) */
+        grid-template-columns: repeat(3, 1fr);
+        /* Alinea todos los elementos verticalmente al centro */
+        align-items: center;
+        /* Padding lateral para no pegar las cosas a los bordes de la pantalla */
+        padding: 0 5%;
+        box-sizing: border-box; /* Asegura que el padding no rompa el width: 100% */
+    }
+
+    /* --- ELEMENTOS DEL GRID --- */
+
+    #logo {
+        /* Ya no necesita width ni padding-left */
+        display: flex;
+        align-items: center;
+    }
+
+    #logo p {
+        margin: 0;
+        font-size: var(--font-size-sm);
+        font-family: "Geist", sans-serif;
+        font-weight: bold;
+        color: var(--neutral-9);
+    }
+
+    /* Cambié la clase a tu contenedor del switch para alinearlo al centro */
+    .theme-switch-wrapper {
+        display: flex;
+        justify-content: flex-end; /* Centra el botón exactamente en la columna del medio */
+    }
+
+    #content {
+        /* Ya no necesita width ni padding-right */
+        display: flex;
+        justify-content: center;
+    }
+
+    #content ul {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #content ul a {
+        text-decoration: none;
+        font-family: "Inter", sans-serif;
+        font-size: var(--font-size-sm);
+        color: var(--neutral-9);
+        transition: color 0.2s ease;
+    }
+
+    #content ul a:hover {
+        color: var(--neutral-7);
+    }
+
+    /* --- ESTILOS DEL SWITCH (SE MANTIENEN IGUAL) --- */
+    .theme-checkbox {
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .theme-label {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        position: relative;
+        font-size: 1.5rem;
+        user-select: none;
+    }
+
+    .sun {
+        display: block;
+    }
+    .moon {
+        display: none;
+    }
+
+    .theme-checkbox:checked + .theme-label .sun {
+        display: none;
+    }
+    .theme-checkbox:checked + .theme-label .moon {
+        display: block;
+    }
+
+    /* #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: var(--neutral);
         display: flex;
         align-items: center;
         z-index: 1000;
+        border-bottom: 1px solid var(--neutral-2);
     }
     #logo {
-        width: 50%;
+        width: 33%;
         padding-left: 5%;
+    }
+    #tools {
     }
     #logo p {
         margin: 0;
-        font-size: 18px;
+        font-size: var(--font-size-sm);
         font-family: "Geist";
         font-weight: bold;
         color: var(--neutral-9);
     }
     #content {
+        width: 33%;
         display: flex;
         justify-content: flex-end;
-        width: 50%;
         padding-right: 5%;
     }
     #content ul {
         display: flex;
         flex-direction: row;
         gap: 20px;
+        list-style-type: none;
     }
     #content ul a {
         text-decoration: none;
         font-family: "Inter";
+        font-size: var(--font-size-sm);
         color: var(--neutral-9);
     }
     #content ul a:hover {
         color: var(--neutral-7);
     }
+
+    .theme-switch-wrapper {
+        width: 33%;
+        display: inline-block;
+    }
+
+    /* Ocultamos el checkbox real, pero sigue siendo accesible */
 </style>
